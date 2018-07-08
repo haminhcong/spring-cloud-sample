@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user
+  cloud:
+    loadbalancer:
+      retry: true
+
+say-hello:
+  ribbon:
+    listOfServers: localhost:8090
+#    listOfServers: localhost:8090,localhost:8091,localhost:8092
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 1
+    OkToRetryOnAllOperations: true
+    ConnectTimeout: 3000
+    ReadTimeout: 3000
+    eureka:
+      enabled: false
+
